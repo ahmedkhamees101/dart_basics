@@ -1,6 +1,5 @@
 
 int CalculateEven(List<int>arr){
-  arr=[10,12,3,15,20,25];
   int sum =0;
   for(int i= 0; i< arr.length; i++){
     if(arr[i]%2==0){
@@ -10,5 +9,8 @@ int CalculateEven(List<int>arr){
 }
 
 void main () {
-print(CalculateEven([]));
+  List<int> arr=[10,12,1,15,20,25];
+  int x =CalculateEven(arr);
+  print(x);
+
 }

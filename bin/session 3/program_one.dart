@@ -1,8 +1,8 @@
 import 'dart:io';
-import 'dart:math';
+
+import 'package:bisic/bisic.dart';
 
   int getMin(List<int>arr){
-   arr=[10,12,3,15,20,25];
    int  min=arr[0];
    for(int i=0 ; i<arr.length;i++){
      if(min>arr[i]){
@@ -14,6 +14,8 @@ import 'dart:math';
  }
 
 void main(){
-  print(getMin([]));
+  List<int> arr=[10,12,1,15,20,25];
+   int x =getMin(arr);
+   print(x);
 
 }

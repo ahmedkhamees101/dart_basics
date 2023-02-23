@@ -1,6 +1,5 @@
 
 int count2(List<int>arr){
-  arr=[22,2,3,15,20,2];
   int counter=0;
   for(int i = 0;i<arr.length;i++){
     if(arr[i]==2){
@@ -11,7 +10,10 @@ int count2(List<int>arr){
 }
 
 void main(){
-  print(count2([]));
+  List<int> arr=[10,12,2,2,20,25];
+  int x =count2(arr);
+  print(x);
+
 }
 
 
