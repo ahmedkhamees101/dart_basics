@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:bisic/bisic.dart';
 
   int getMin(List<int>arr){
    int  min=arr[0];
