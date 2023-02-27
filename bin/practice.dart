@@ -29,10 +29,21 @@ import 'dart:io';
 
 void main (){
   print("How many number you want to Convert it : ");
- int  userInput =int.parse(stdin.readLineSync()!);
 
-  List<int> list;
- list.add(userInput);
 }
+
+// int sumition(){
+//   int  userInput =int.parse(stdin.readLineSync()!);
+//   List<int> list = [];
+//   list.add(userInput);
+//   for(int i = 0 ; i<= list.length; i++){
+//    if (list[i] > 0){
+//      return list;
+//    }else{
+//     return list[i].abs();
+//    }
+//
+//   }
+// }
 
 
