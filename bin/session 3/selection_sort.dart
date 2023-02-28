@@ -12,7 +12,6 @@ List<int> selectionSort(List<int> list) {
         min = j;
       }
     }
-
     if (i != min) {
       int temp = list[i];
       list[i] = list[min];

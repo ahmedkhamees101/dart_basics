@@ -26,11 +26,42 @@
 //
 
 import 'dart:io';
+import 'dart:math';
 
-void main (){
-  print("How many number you want to Convert it : ");
+ int getMinValueIndex(List<int> arr) {
+   int minvalue = arr[0];
+  for (int i = 0; i < arr.length; i++) {
+    if (arr[i] < minvalue) {
+      minvalue= arr[i];
+    }
+
+  }return minvalue;
 
 }
+
+selectSort(List<int> arr2) {
+  for (int i = 0; i < arr2.length; i++) {
+    int minvalue2 = getMinValueIndex(arr2);
+
+    int temp = arr2[i];
+    arr2[i] = arr2[minvalue2];
+    arr2[minvalue2] = temp;
+    print(arr2);
+  }
+}
+
+void main() {
+  List<int> arr = [100, 8, 6, 78, 9, 10];
+ int x= getMinValueIndex(arr);
+ print(x);
+}
+
+
+
+
+
+
+
 
 // int sumition(){
 //   int  userInput =int.parse(stdin.readLineSync()!);
