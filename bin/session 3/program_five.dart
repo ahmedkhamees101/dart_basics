@@ -1,34 +1,23 @@
-
-
-
-countGeneral(List<int> arr) {
+int countGeneral(List<int> arr, int value) {
   int counter = 0;
-
-  for (int i = 0; i < arr.length-1; i++) {
-    if (arr[i] == arr[i+1]) {
-      counter++;
-    }else if(arr[i]>arr[i+1]){
-      break;
+  for (int i = 0; i < arr.length; i++) {
+    if (arr[i] == value) {
+      // counter if value is occurrence or not
+      counter++; // if you find counter +=1
     }
-    print("${arr[i]}-->${counter++}");
   }
+  return counter;
+}
 
+calculateOccurrence(List<int> arr) {
+  for (int i = 0; i < arr.length; i++) {
+    int counter = countGeneral(arr,
+        arr[i]); // here we make other loop to tell my which number and how many times (value == arr[i])
+    print('${arr[i]}-->$counter');
   }
-
-// int? countGeneral(List<int> arr) {
-//   int counter = 1;
-//   for (int i = 0; i < arr.length - 1; i++) {
-//     if (arr[i] == arr[i + 1]) {
-//       counter++;
-//     } else if (arr[i] > arr[i + 1]) {
-//       break;
-//     }
-//     print('${arr[i]}=>$counter');
-//   }
-// }
+}
 
 void main() {
   List<int> num = [1, 2, 3, 1, 3, 6, 7];
- countGeneral(num);
-
+  calculateOccurrence(num);
 }

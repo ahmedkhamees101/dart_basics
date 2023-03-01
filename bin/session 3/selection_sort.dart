@@ -12,7 +12,7 @@ List<int> selectionSort(List<int> list) {
         min = j;
       }
     }
-    if (i != min) {
+    if (i != min) {     //just in case if the min is already the first element
       int temp = list[i];
       list[i] = list[min];
       list[min] = temp;
@@ -20,3 +20,7 @@ List<int> selectionSort(List<int> list) {
   }
   return list;
 }
+
+
+
+
