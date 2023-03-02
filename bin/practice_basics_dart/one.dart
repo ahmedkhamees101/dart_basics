@@ -8,22 +8,27 @@ Z: divide score by 6
  */
 import 'dart:io';
 
-void main(){
-  stdout.write("Enter your characters :");
-  String res = (stdin.readLineSync()!);
-  getString();
+void main() {
+  stdout.write("Enter your text :");
+  String text = stdin.readLineSync()!;
+  text = text.toLowerCase();
+  getString(text);
 }
-
-
-int getString(){
-  List<String> s = ["V","W","X","Y","Z"];
-  int add=0 ;
-  for(int i=0 ; i<= char.length;i++) {
-
-     s=="V"||s=="v"?add+=5:s == "W" ||s=="w"? add+=2: s=="X" || s=="x"? add-=3:
-     s=="Y" || s=="y"? add*=2:s=="Z"||s=="z"? add~/=6: print('0');
+getString(String text){
+  int score =0;
+  for (int i = 0; i < text.length; i++) {
+    if (text[i] == "v") {
+      score += 5;
+    } else if (text[i] == "w") {
+      score += 2;
+    } else if (text[i] == "x") {
+      score -= 3;
+    } else if (text[i] == "y") {
+      score *= 2;
+    } else if (text[i] == "z") {
+      score ~/= 6;
+    }
   }
-
-
-  return add;
+ return print("your score is $score");
 }
+
