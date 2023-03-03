@@ -11,8 +11,8 @@ int countGeneral(List<int> arr, int value) {
 
 calculateOccurrence(List<int> arr) {
   for (int i = 0; i < arr.length; i++) {
-    int counter = countGeneral(arr,
-        arr[i]); // here we make other loop to tell my which number and how many times (value == arr[i])
+    int counter = countGeneral(arr,  arr[i]); // here we make other loop to tell my which number and how many times (value == arr[i])
+
     print('${arr[i]}-->$counter');
   }
 }

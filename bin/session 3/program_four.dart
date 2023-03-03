@@ -1,4 +1,4 @@
-int CountGeneral(List<int>arr,value){
+int countGeneral(List<int>arr,value){
   int counter=0;
   for(int i = 0;i<arr.length;i++){
     if(arr[i]==value){
@@ -11,6 +11,6 @@ int CountGeneral(List<int>arr,value){
 
 void main(){
   List<int>arr= [1,2,3,1,3,6];
- int x = CountGeneral(arr, 2);
+ int x = countGeneral(arr, 2);
   print(x);
 }
