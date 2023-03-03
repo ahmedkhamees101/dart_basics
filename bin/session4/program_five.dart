@@ -3,21 +3,22 @@ displays them in the reverse of the order in which they were read.
 */
 import 'dart:io';
 
-void main (){
+void main() {
   print('Enter Ten Numbers :');
-  reverseFun();
+  List<int> arr = [];
+  getTenNum(arr);
 }
 
+void getTenNum(List<int> arr) {
+  for (int i = 0; i < 10; i++) {
+    int value = int.parse(stdin.readLineSync()!);
+    arr.add(value);
 
-
-
-reverseFun() {
-  String? numbers;
-  for (int i = 0; i < 3; i++) {
-      numbers = stdin.readLineSync()!;
   }
-  print(numbers?.split("").reversed.join(""))  ;
-
+  reverseFun(arr);
 }
-arrayAdd(){
+
+reverseFun(List<int> arrReversed) {
+  var reversed = arrReversed.reversed;
+  print(reversed.toList());
 }
