@@ -9,3 +9,28 @@ Enter ten numbers: 1 2 3 2 1 6 3 4 5 2
 The number of distinct number is 6
 The distinct numbers are: 1 2 3 6 4 5
  */
+// take ten  numbers and remove the occurrence number
+// print how many numbers they are and which numbers
+
+import 'dart:io';
+
+numOfList(){
+  List<int>list = []; int counter = 0;
+  for(int i=0 ; i<10; i++){
+    int num=int.parse(stdin.readLineSync()!);
+    list.add(num);
+    for(int j =i+1 ; j < list.length; j++){
+      if(list[i]==list[j]){
+          list.remove(j);
+
+      }
+    }
+  }
+  print(list);
+}
+
+
+void main(){
+  numOfList();
+}
+
