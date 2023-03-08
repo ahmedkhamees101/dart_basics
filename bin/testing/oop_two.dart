@@ -27,7 +27,7 @@ class Rectangle extends Shape{
   }
   @override
   void draw(){
-    print("")
+    print("");
   }
 }
 
