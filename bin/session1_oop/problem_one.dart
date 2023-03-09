@@ -20,36 +20,35 @@ is sufficient.
 import 'dart:io';
 
 class BankAccount {
-  late int accountId;
-  late double balance;
-  late double deposit;
+  int accountId;
+  double balance;
+
   BankAccount({this.accountId = 12345, this.balance = 0.0});
 
-  BankAccount.fromDeposit() {
+  toDeposit() {
     print("how  much you want to deposit  ?");
     int deposit = int.parse(stdin.readLineSync()!);
     balance += deposit;
     print("your balance now is $balance");
     askingUser();
-    // make fun to tell user if he want any thing else
-    //break;
-    //make an exit method
   }
 
-  BankAccount.fromWithdraw() {
+  toWithdraw() {
     print("how much you want to withdraw ? ");
     int withdraw = int.parse(stdin.readLineSync()!);
-    if (withdraw <= balance) {
+    if (withdraw < balance) {
+      balance -= withdraw;
       print("Done, plz take your money");
+      print('your balance now is $balance');
     } else {
-      print(balance);  //does not calculate the withdraw input  always equal =0
+      print(balance);
+
       print("Sorry, no money enough");
     }
     askingUser();
   }
 
   userChooses() {
-    //rebuild other one without welcome for choose 1 2
     print("Welcome to our Bank");
     stdout.write("plz Enter your name :");
     String userName = stdin.readLineSync()!;
@@ -59,9 +58,9 @@ class BankAccount {
       print("1-Withdraw  2-Deposit 3-Exit ");
       int userInput = int.parse(stdin.readLineSync()!);
       if (userInput == 1) {
-        BankAccount.fromWithdraw();
+        toWithdraw();
       } else if (userInput == 2) {
-        BankAccount.fromDeposit();
+        toDeposit();
       } else if (userInput == 3) {
         print("thank you for using our bank");
       } else {
@@ -78,18 +77,18 @@ class BankAccount {
     print("1-Withdraw  2-Deposit 3-Exit ");
     int userInput = int.parse(stdin.readLineSync()!);
     if (userInput == 1) {
-      BankAccount.fromWithdraw();
+      toWithdraw();
     } else if (userInput == 2) {
-      BankAccount.fromDeposit();
+      toDeposit();
     } else if (userInput == 3) {
       print("thank you for using our bank");
     } else {
       stdout.write("Wrong number Plz Choose number from 1 2 3");
-      userChooses(); //edit
+      userChooses();
     }
   }
 
-  BankAccount.fromBalance() {
+  toBalance() {
     int userId = int.parse(stdin.readLineSync()!);
     if (userId == accountId) {
       print(balance);

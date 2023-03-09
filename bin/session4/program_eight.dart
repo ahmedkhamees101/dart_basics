@@ -14,20 +14,40 @@ The distinct numbers are: 1 2 3 6 4 5
 
 import 'dart:io';
 
-numOfList(){
-  List<int>list = []; int counter = 0;
-  for(int i=0 ; i<10; i++){
-    int num=int.parse(stdin.readLineSync()!);
+List<int> numOfList() {
+  print('Enter your ten Numbers : ');
+  List<int> list = [];
+  for (int i = 0; i < 10; i++) {
+    int num = int.parse(stdin.readLineSync()!);
     list.add(num);
-    for(int j =i+1 ; j < list.length; j++){
-
-    }
   }
-  print(list);
+  return list;
+}
+List<int>checkFun(){
+  int value;
+ List<int> list= numOfList();
+ for(int i =0;i<list.length;i++){
+   value =list[i];
+   for(int j=i+1;j<list.length;j++){
+     if(value == list[j]){
+       list.removeAt(j);
+     }
+   }
+ }
+ return list;
+}
+
+counterFun(){
+ List<int>arr= checkFun();
+  int counter=0;
+  for(int i = 0 ; i<arr.length;i++){
+    counter++;
+  }
+  print('The number of distinct number is $counter');
+  print("The distinct numbers are: $arr");
 }
 
 
-void main(){
-  numOfList();
+void main() {
+counterFun();
 }
-
