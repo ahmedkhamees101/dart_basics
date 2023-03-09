@@ -20,10 +20,7 @@ numOfList(){
     int num=int.parse(stdin.readLineSync()!);
     list.add(num);
     for(int j =i+1 ; j < list.length; j++){
-      if(list[i]==list[j]){
-          list.remove(j);
 
-      }
     }
   }
   print(list);
