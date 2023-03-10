@@ -23,7 +23,7 @@ class BankAccount {
   int accountId;
   double balance;
 
-  BankAccount({this.accountId = 12345, this.balance = 0.0});
+  BankAccount(this.accountId, this.balance );
 
   toDeposit() {
     print("how  much you want to deposit  ?");
@@ -98,6 +98,6 @@ class BankAccount {
 }
 
 void main() {
-  BankAccount B = BankAccount();
+  BankAccount B = BankAccount(12345,0.0);
   B.userChooses();
 }
