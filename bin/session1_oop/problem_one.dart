@@ -25,7 +25,7 @@ class BankAccount {
 
   BankAccount(this.accountId, this.balance );
 
-  toDeposit() {
+ void  toDeposit() {
     print("how  much you want to deposit  ?");
     int deposit = int.parse(stdin.readLineSync()!);
     balance += deposit;
@@ -33,7 +33,7 @@ class BankAccount {
     askingUser();
   }
 
-  toWithdraw() {
+  void toWithdraw() {
     print("how much you want to withdraw ? ");
     int withdraw = int.parse(stdin.readLineSync()!);
     if (withdraw < balance) {
@@ -48,7 +48,7 @@ class BankAccount {
     askingUser();
   }
 
-  userChooses() {
+ void userChooses() {
     print("Welcome to our Bank");
     stdout.write("plz Enter your name :");
     String userName = stdin.readLineSync()!;
@@ -72,7 +72,7 @@ class BankAccount {
     }
   }
 
-  askingUser() {
+ void askingUser() {
     print("any thing else : ");
     print("1-Withdraw  2-Deposit 3-Exit ");
     int userInput = int.parse(stdin.readLineSync()!);
@@ -88,7 +88,7 @@ class BankAccount {
     }
   }
 
-  toBalance() {
+ void toBalance() {
     int userId = int.parse(stdin.readLineSync()!);
     if (userId == accountId) {
       print(balance);
@@ -98,6 +98,6 @@ class BankAccount {
 }
 
 void main() {
-  BankAccount B = BankAccount(12345,0.0);
+ var B = BankAccount(12345,0.0);
   B.userChooses();
 }
